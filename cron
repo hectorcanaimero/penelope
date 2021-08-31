@@ -1,0 +1,16 @@
+# PRODUCTS
+05 00 * * * cd /home/mkt/marketing && /home/mkt/marketing/venv/bin/python app.py --products 1 >> logs/products.out
+50 00 * * * cd /home/mkt/marketing && /home/mkt/marketing/venv/bin/python app.py --products 2 >> logs/products.out
+20 01 * * * cd /home/mkt/marketing && /home/mkt/marketing/venv/bin/python app.py --products 3 >> logs/products.out
+40 01 * * * cd /home/mkt/marketing && /home/mkt/marketing/venv/bin/python app.py --products 4 >> logs/products.out
+00 02 * * * cd /home/mkt/marketing && /home/mkt/marketing/venv/bin/python app.py --products 5 >> logs/products.out
+# CAMPANHAS
+30 02 * * * cd /home/mkt/marketing/mongo-sync && /home/mkt/marketing/venv/bin/python app.py --campanha >> logs/campanhas.out
+# SYNC
+00 03 * * * cd /home/mkt/marketing/mongo-sync && ./mongo-sync push -y
+# IMAGES
+00 15 * * * cd /home/mkt/marketing && /home/mkt/marketing/venv/bin/python app.py --image 1 >> logs/images.out
+00 16 * * * cd /home/mkt/marketing && /home/mkt/marketing/venv/bin/python app.py --image 2 >> logs/images.out
+00 17 * * * cd /home/mkt/marketing && /home/mkt/marketing/venv/bin/python app.py --image 3 >> logs/images.out
+00 18 * * * cd /home/mkt/marketing && /home/mkt/marketing/venv/bin/python app.py --image 4 >> logs/images.out
+00 19 * * * cd /home/mkt/marketing && /home/mkt/marketing/venv/bin/python app.py --image 5 >> logs/images.out
