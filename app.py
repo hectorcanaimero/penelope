@@ -30,7 +30,7 @@ if args.products is not None:
         item.initialize(line)
         item.add_product_store(line)
         item.add_product_image(line)
-        pass
+        print(f"[EXIT][LINE][{line}]")
 
 
 if args.image is not None:
@@ -38,7 +38,7 @@ if args.image is not None:
     if line > 5:
         print(f"[LINE][{line}][WRONG]")
     else:
-        # imgs.initialize(line)
+        imgs.initialize(line)
         imgs.move_image(line)
         path_temp = path.join(path_public, 'temp', f"temp-{line}")
         system(f"optimize-images -rc {path_temp}")

@@ -1,4 +1,4 @@
-from os import getcwd
+from os import closerange, getcwd
 from datetime import datetime
 from os.path import join
 from progressbar import ProgressBar
@@ -75,7 +75,7 @@ class Products:
             with ProgressBar(max_value=count_del) as bar:
                 for i in range(count_del):
                     for res in delete:
-                        count = count + 1
+                        count = i + 1
                         bar.update(count)
                         self.db.remove_many_collection('temp_products', {'codProduto': int(res)})
                         self.db.remove_many_collection('temp_stores', {'host': int(res)})
